@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'SAMKeychain'
-  spec.version      = '1.5.8'
+  spec.version      = '1.5.9'
   spec.description  = 'Simple Cocoa wrapper for the keychain that works on OS X, iOS, tvOS, and watchOS.'
   spec.summary      = 'Simple Cocoa wrapper for the keychain.'
   spec.homepage     = 'https://github.com/soffes/samkeychain'
@@ -21,9 +21,5 @@ Pod::Spec.new do |spec|
   spec.resources = 'Support/SAMKeychain.bundle'
 
   spec.frameworks = 'Security', 'Foundation'
-
-  spec.osx.deployment_target = '10.8'
-  spec.ios.deployment_target = '5.0'
-  spec.tvos.deployment_target = '9.0'
-  spec.watchos.deployment_target = '2.0'
+  spec.ios.deployment_target = '13.0'
 end
