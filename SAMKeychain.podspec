@@ -8,6 +8,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/soffes/samkeychain.git', :tag => "v#{spec.version}" }
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
 
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
   spec.source_files = 'Sources/*.{h,m}'
   spec.resources = 'Support/SAMKeychain.bundle'
 
