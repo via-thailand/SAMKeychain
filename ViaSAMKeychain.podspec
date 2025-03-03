@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ViaSAMKeychain'
-  spec.version      = '1.5.10'
+  spec.version      = '1.5.11'
   spec.description  = 'Simple Cocoa wrapper for the keychain that works on OS X, iOS, tvOS, and watchOS.'
   spec.summary      = 'Simple Cocoa wrapper for the keychain.'
   spec.homepage     = 'https://github.com/soffes/samkeychain'
