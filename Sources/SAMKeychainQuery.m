@@ -158,13 +158,24 @@
 #pragma mark - Accessors
 
 - (void)setPasswordObject:(id<NSCoding>)object {
-	self.passwordData = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSError *error = nil;
+    self.passwordData = [NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:NO error:&error];
+    if (error) {
+        NSLog(@"Error archiving data: %@", error.localizedDescription);
+    }
 }
 
 
 - (id<NSCoding>)passwordObject {
 	if ([self.passwordData length]) {
-		return [NSKeyedUnarchiver unarchiveObjectWithData:self.passwordData];
+        NSError *error = nil;
+        NSDictionary *query = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSDictionary class] fromData:self.passwordData error:&error];
+        if (error) {
+            NSLog(@"Error unarchiving data: %@", error.localizedDescription);
+        }
+        else {
+            return query;
+        }
 	}
 	return nil;
 }
