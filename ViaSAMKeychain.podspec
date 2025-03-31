@@ -21,5 +21,5 @@ Pod::Spec.new do |spec|
   spec.resources = 'Support/SAMKeychain.bundle'
 
   spec.frameworks = 'Security', 'Foundation'
-  spec.ios.deployment_target = '13.0'
+  spec.ios.deployment_target = '10.0'
 end
